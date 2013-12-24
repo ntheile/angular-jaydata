@@ -2,20 +2,13 @@
  * Created by nath on 22/12/2013.
  */
 
-var skillsApp = angular.module('skillsApp', ['jaydata']);
+angular.module('skillsApp', ['skillServices'])
 
-skillsApp.controller('SkillsListController', function ($scope, $data) {
+    .controller('SkillsListController', ['$scope','skillSet', function ($scope, skillSet) {
 
-    $scope.SkillRatings = [];
+        skillSet.getAllRatings().then(function(ratings){
+            $scope.Ratings = ratings;
+        });
 
-    $data.initService('http://localhost:52999').then(function (service) {
-
-        $scope.service = service;
-
-        $scope.SkillRatings = service.SkillRatings.toLiveArray();
-
-    });
-
-
-})
+    }]);
 

@@ -11,6 +11,7 @@
     <script src="lib/datajs-1.0.3.min.js"></script>
     <script src="lib/jaydata/jaydata.js"></script>
     <script src="lib/jaydata/jaydatamodules/angular.js"></script>
+    <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="SkillsListController">
@@ -22,8 +23,9 @@
 
         <p class="lead">Start odata server first...</p>
 
+        <p>some data {{someData}}</p>
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="rating in SkillRatings">
+            <li class="list-group-item" ng-repeat="rating in Ratings">
                 <p class="list-group-item-heading">{{rating.skill}}</p>
                 <p class="list-group-item-text">Rating: {{rating.rating}}</p>
             </li>
