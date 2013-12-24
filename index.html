@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="skillsApp">
+<head>
+    <title>Use angular and jaydata to put OData stuff in page</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="starter-template.css" rel="stylesheet">
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/jquery-2.0.3.min.js"></script>
+    <script src="lib/datajs-1.0.3.min.js"></script>
+    <script src="lib/jaydata/jaydata.js"></script>
+    <script src="lib/jaydata/jaydatamodules/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="SkillsListController">
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Get OData stuff below...</h1>
+
+        <p class="lead">Start odata server first...</p>
+
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="rating in SkillRatings">
+                <p class="list-group-item-heading">{{rating.skill}}</p>
+                <p class="list-group-item-text">Rating: {{rating.rating}}</p>
+            </li>
+            <li class="list-group-item" ng-repeat="rating in someData">
+                <p class="list-group-item-heading">{{rating.skill}}</p>
+                <p class="list-group-item-text">Rating: {{rating.rating}}</p>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+</body>
+</html>
